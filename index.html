@@ -1,147 +1,81 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AdiminSys - Gestão Inteligente</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #007bff;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        section {
-            padding: 20px;
-            max-width: 900px;
-            margin: auto;
-            background: white;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-        .gestao-container {
-            padding: 20px;
-            max-width: 900px;
-            margin: 20px auto;
-            background: white;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-        .gestao-container h2 {
-            text-align: center;
-        }
-        .gestao-form label, .gestao-form input, .gestao-form button {
-            display: block;
-            width: 100%;
-            margin-bottom: 10px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EL EnterpriseLanguage - Demo</title>
+  <link rel="stylesheet" href="css/style.css"/>
 </head>
-<body>
-    <header>
-        <h1>AdiminSys</h1>
-        <p>Transformamos a gestão da sua empresa</p>
-    </header>
-    
-    <section>
-        <h2>Sobre Nós</h2>
-        <p>A AdiminSys é especializada no desenvolvimento de sistemas de gestão empresarial. 
-           Com tecnologia inovadora, ajudamos empresas a otimizar seus processos e aumentar a produtividade.</p>
-    </section>
-    
-    <section>
-        <h2>Nossos Serviços</h2>
-        <ul>
-            <li>ERP Personalizado</li>
-            <li>Sistemas Financeiros</li>
-            <li>Controle de Estoque</li>
-            <li>Gestão de Recursos Humanos</li>
+<body class="dark">
+  <header class="header">
+    <div class="container">
+      <h1 class="logo">EL EnterpriseLanguage</h1>
+      <nav>
+        <ul class="nav">
+          <li><a href="#features">Recursos</a></li>
+          <li><a href="#demo">Demonstração</a></li>
+          <li><a href="#contact">Contato</a></li>
         </ul>
-    </section>
-    
-    <section>
-        <h2>Entre em Contato</h2>
-        <form>
-            <label for="nome">Nome:</label><br>
-            <input type="text" id="nome" name="nome" required><br>
-            <label for="email">E-mail:</label><br>
-            <input type="email" id="email" name="email" required><br>
-            <label for="mensagem">Mensagem:</label><br>
-            <textarea id="mensagem" name="mensagem" rows="4" required></textarea><br>
-            <button type="submit" >Enviar</button>
-        </form>
-    </section>
-    
-    <section class="gestao-container">
-        <h2>Sistema de Gestão</h2>
-        <p>Simulação de um sistema de gestão desenvolvido pela AdiminSys. Adicione funcionários e visualize a equipe.</p>
-        <form class="gestao-form" id="gestaoForm">
-            <label for="nomeFuncionario">Nome do Funcionário:</label>
-            <input type="text" id="nomeFuncionario" required>
-            <label for="cpfFuncionario">CPF do Funcionário:</label>
-            <input type="text" id="cpfFuncionario" required> 
-            <button type="button" onclick="adicionarFuncionario()">Adicionar</button>
-        </form>
-        <h3>Funcionários Cadastrados:</h3>
-        <ul id="listaFuncionarios"></ul>
-    </section>
-    
-    <footer>
-        <p>&copy; 2025 AdiminSys - Todos os direitos reservados.</p>
-    </footer>
+      </nav>
+      <button id="toggleTheme" class="theme-toggle">Alternar Tema</button>
+    </div>
+  </header>
 
-    <script>
-        async function adicionarFuncionario() {
-            var nome = document.getElementById('nomeFuncionario').value;
-            var cpf = document.getElementById('cpfFuncionario').value;
-    
-            if (!nome || !cpf) {
-                alert("Nome e CPF são obrigatórios!");
-                return;
-            }
-    
-            const response = await fetch('http://localhost:3000/adicionar-funcionario', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ nome, cpf })
-            });
-    
-            const data = await response.json();
-            alert(data.mensagem);
-            document.getElementById('nomeFuncionario').value = '';
-            document.getElementById('cpfFuncionario').value = '';
-    
-            carregarFuncionarios();
-        }
-    
-        async function carregarFuncionarios() {
-            const response = await fetch('http://localhost:3000/funcionarios');
-            const funcionarios = await response.json();
-    
-            var lista = document.getElementById('listaFuncionarios');
-            lista.innerHTML = '';
-            funcionarios.forEach(funcionario => {
-                var item = document.createElement('li');
-                item.textContent = `${funcionario.nome} - CPF: ${funcionario.cpf}`;
-                lista.appendChild(item);
-            });
-        }
-    
-        document.addEventListener("DOMContentLoaded", carregarFuncionarios);
-    </script>
-    
+  <section class="hero">
+    <div class="container">
+      <h2>Impulsione seu negócio com gestão inteligente</h2>
+      <p>Solução tudo-em-um para monitorar, planejar e escalar sua empresa com eficiência.</p>
+      <a href="#demo" class="btn">Ver Demonstração</a>
+    </div>
+  </section>
+
+  <section class="features" id="features">
+    <div class="container">
+      <h2>Principais Recursos</h2>
+      <div class="feature-list">
+        <div class="feature">
+          <h3>Gestão de Equipe</h3>
+          <p>Gerencie seus funcionários, departamentos e cargos com facilidade.</p>
+        </div>
+        <div class="feature">
+          <h3>Relatórios em Tempo Real</h3>
+          <p>Visualize dados e insights de desempenho em tempo real.</p>
+        </div>
+        <div class="feature">
+          <h3>Controle Financeiro</h3>
+          <p>Acompanhe receitas, despesas e orçamentos em um só lugar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="demo" id="demo">
+    <div class="container">
+      <h2>Demonstração do Aplicativo</h2>
+      <div class="demo-box1">
+        <img src="Captura de tela 2025-04-16 210803.png" alt="img da tela de login" width="500px">
+        <p>Tela de Login chamativa</p>
+      </div>
+      <div class="demo-box2">
+        <img src="Captura de tela 2025-04-16 212453.png" alt="img da tela de login" width="500px">
+        <p>Tela da conta</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" id="contact">
+    <div class="container">
+      <p>Entre em contato: <a href="mailto:info@enterpriselanguage.com">info@enterpriselanguage.com</a></p>
+      <p>&copy; 2025 EL EnterpriseLanguage. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    const btn = document.getElementById('toggleTheme');
+    btn.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      document.body.classList.toggle('light');
+    });
+  </script>
 </body>
 </html>

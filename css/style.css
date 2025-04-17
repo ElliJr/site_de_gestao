@@ -1,0 +1,298 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Theme */
+body.dark {
+  background-color: #0d1117;
+  color: #c9d1d9;
+}
+
+/* Light Theme */
+body.light {
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Header */
+.header {
+  padding: 1rem 0;
+  border-bottom: 1px solid;
+}
+
+body.dark .header {
+  background: #161b22;
+  border-color: #30363d;
+}
+
+body.light .header {
+  background: #ffffff;
+  border-color: #e5e7eb;
+}
+
+.logo {
+  font-size: 1.5rem;
+}
+
+body.dark .logo {
+  color: #58a6ff;
+}
+
+body.light .logo {
+  color: #2563eb;
+}
+
+.nav {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav a {
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+body.dark .nav a {
+  color: #8b949e;
+}
+
+body.dark .nav a:hover {
+  color: #58a6ff;
+}
+
+body.light .nav a {
+  color: #4b5563;
+}
+
+body.light .nav a:hover {
+  color: #2563eb;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Toggle Button */
+.theme-toggle {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background-color: transparent;
+  color: inherit;
+  border: 1px solid currentColor;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.theme-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+body.dark .hero {
+  background: #0d1117;
+}
+
+body.light .hero {
+  background: #f9fafb;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+}
+
+body.dark .hero h2 {
+  color: #f0f6fc;
+}
+
+body.light .hero h2 {
+  color: #111827;
+}
+
+.hero p {
+  margin: 1rem 0;
+  font-size: 1.1rem;
+}
+
+body.dark .hero p {
+  color: #8b949e;
+}
+
+body.light .hero p {
+  color: #6b7280;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  background: #238636;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #2ea043;
+}
+
+/* Features */
+.features {
+  padding: 4rem 0;
+}
+
+body.dark .features {
+  background: #161b22;
+}
+
+body.light .features {
+  background: #f3f4f6;
+}
+
+.features h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+body.dark .features h2 {
+  color: #f0f6fc;
+}
+
+body.light .features h2 {
+  color: #111827;
+}
+
+.feature-list {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.feature {
+  flex: 1;
+  min-width: 250px;
+  padding: 1.5rem;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+body.dark .feature {
+  background: #21262d;
+}
+
+body.light .feature {
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+}
+
+.feature h3 {
+  margin-bottom: 0.5rem;
+}
+
+body.dark .feature h3 {
+  color: #58a6ff;
+}
+
+body.light .feature h3 {
+  color: #2563eb;
+}
+
+/* Demo */
+.demo {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.demo-box1 {
+  margin-top: 2rem;
+  padding: 2rem;
+  border-radius: 10px;
+  border: 2px dashed;
+}
+.demo-box2 {
+  margin-top: 2rem;
+  padding: 2rem;
+  border-radius: 10px;
+  border: 2px dashed;
+}
+img{
+  border-radius: 10px;
+}
+
+body.dark .demo-box1 .demo-box2 {
+  background: #161b22;
+  border-color: #30363d;
+  color: #8b949e;
+}
+
+body.light .demo-box1 .demo-box2 {
+  background: #ffffff;
+  border-color: #d1d5db;
+  color: #6b7280;
+}
+
+/* Footer */
+.footer {
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+body.dark .footer {
+  background: #0d1117;
+  color: #8b949e;
+}
+
+body.light .footer {
+  background: #ffffff;
+  color: #6b7280;
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+body.dark .footer a {
+  color: #58a6ff;
+}
+
+body.light .footer a {
+  color: #2563eb;
+}
+
+
+@media (max-width: 720px ) {
+  img{
+    width: 360px;
+  }
+}
