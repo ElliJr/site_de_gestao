@@ -360,7 +360,7 @@ body.light .footer a {
 
 @media (max-width: 768px ) {
   img{
-    width: 330px;
+    width: 300px;
   }
   .nav{
     display: none;
