@@ -30,6 +30,46 @@ body.light {
   margin: auto;
 }
 
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #161b22;
+  color: #fff;
+  padding-top: 4rem;
+  transition: left 0.3s ease;
+  z-index: 999;
+}
+
+.side-menu nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.side-menu nav ul li {
+  padding: 1rem;
+  text-align: center;
+}
+
+.side-menu nav ul li a {
+  color: #58a6ff;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+/* Botão para abrir o menu */
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  font-size: 2rem;
+  color: #58a6ff;
+  cursor: pointer;
+  z-index: 1000;
+}
 /* Header */
 .header {
   padding: 1rem 0;
@@ -63,6 +103,12 @@ body.light .logo {
   display: flex;
   gap: 1rem;
 }
+.nav2 {
+  list-style: none;
+  display: flex;
+  gap: 1rem; 
+  visibility: hidden;
+}
 
 .nav a {
   text-decoration: none;
@@ -82,6 +128,26 @@ body.light .nav a {
 }
 
 body.light .nav a:hover {
+  color: #2563eb;
+}
+.nav2 a {
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+body.dark .nav2 a {
+  color: #8b949e;
+}
+
+body.dark .nav2 a:hover {
+  color: #58a6ff;
+}
+
+body.light .nav2 a {
+  color: #4b5563;
+}
+
+body.light .nav2 a:hover {
   color: #2563eb;
 }
 
@@ -291,8 +357,22 @@ body.light .footer a {
 }
 
 
-@media (max-width: 720px ) {
+@media (max-width: 768px ) {
   img{
     width: 360px;
+  }
+  .nav{
+    display: none;
+  }
+  .theme-toggle{
+    display: none;
+  }
+  .menu-toggle {
+    display: block;
+    display: flex;
+  }
+
+  .side-menu.active {
+    left: 0;
   }
 }
