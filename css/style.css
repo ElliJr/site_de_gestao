@@ -66,6 +66,7 @@ body.light {
   position: fixed;
   top: 1rem;
   left: 1rem;
+  right: 400px;
   font-size: 2rem;
   color: #58a6ff;
   cursor: pointer;
