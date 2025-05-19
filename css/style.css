@@ -313,6 +313,15 @@ body.light .feature h3 {
   border-radius: 10px;
   border: 2px dashed;
 }
+.demo-box3 {
+  margin-top: 2rem;
+  padding: 2rem;
+  border-radius: 10px;
+  border: 2px dashed;
+}
+a{
+  color: white;
+}
 img{
   border-radius: 10px;
 }
@@ -357,7 +366,11 @@ body.dark .footer a {
 body.light .footer a {
   color: #2563eb;
 }
-
+.download_sys{
+  background-color: #111827;
+  padding: 12px;
+  border-radius: 12px;
+}
 
 @media (max-width: 768px ) {
   img{
